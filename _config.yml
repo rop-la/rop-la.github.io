@@ -10,8 +10,8 @@ github_username:  rop-la
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-hacker
-#theme: minima
+#theme: jekyll-theme-hacker
+theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

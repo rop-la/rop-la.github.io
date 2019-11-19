@@ -4,7 +4,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Blog about exploiting, researching, CTF competitions and more!
   Team ROP.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://blog.rop.la/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://blog.rop.la" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: rop_la
 github_username:  rop-la
 

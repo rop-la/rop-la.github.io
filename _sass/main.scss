@@ -1,0 +1,273 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+// Definicion de variables
+
+$font-size: 14pt;
+
+$font-1st: 'Inconsolata', monospace;
+$font-2nd: 'Roboto', sans-serif;
+
+$color-bg-1st: #222;
+$color-bg-2nd: #333;
+$color-text-1st: #ff6600;
+$color-text-2nd: #ff9933;
+$color-text-3rd: #a0a0a0;
+
+//$color-text-1st: #fff;
+//$color-text-2nd: #ddd;
+$color-text-1st: #2E86C1; //#5D6D7E;
+$color-text-2nd: #5D6D7E; //#3498DB; //#AEB6BF;
+
+//$color-text-1st: #C0392B;
+//$color-text-2nd: #CD6155;
+//$color-text-2nd: #F1C40F;
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $color-bg-1st;
+  font-size: $font-size;
+}
+
+section, article, aside, footer, header, nav, hgroup {
+  display: block;
+}
+
+h1, h2 {
+  font-family: $font-1st;
+}
+
+h1 {
+  color: $color-text-1st;
+  font-size: 2em;
+}
+
+h2 {
+  color: $color-text-2nd;
+  font-size: 1.8em;
+}
+
+p {
+  font-family: $font-2nd;
+  text-align: justify;
+  color: $color-text-3rd;
+}
+
+header {
+  padding-bottom: 20px;
+
+  nav {
+
+    ul {
+      background-color: $color-bg-2nd;
+      border-radius: 5px;
+    }
+  }
+}
+
+ul.pagination {
+  li.page-item {
+
+    &.disabled {
+      a.page-link {
+        color: $color-bg-2nd;
+      }
+    }
+
+    &.active {
+      a.page-link {
+        background: $color-text-1st;
+        color: #000;
+      }
+    }
+
+    a.page-link {
+      background-color: $color-bg-1st;
+      border-color: $color-bg-2nd;
+      color: $color-text-2nd;
+
+      &:hover {
+        background-color: $color-text-1st;
+        color: #000;
+      }
+    }
+  }
+}
+
+aside {
+
+  figure {
+    margin: auto;
+    padding-bottom: 20px;
+
+    img.img-thumbnail {
+      border-color: $color-bg-2nd;
+      background-color: $color-bg-2nd;
+    }
+  }
+
+  section {
+    h1 {
+      font-size: 1.2em;
+    }
+
+    p {
+      font-size: 0.9em;
+    }
+  }
+}
+
+article {
+
+  margin-bottom: 20px;
+  padding: 10px;
+  border-color: $color-bg-2nd;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+
+  header {
+    padding-bottom: 5px;
+
+    h1 {
+      display: block;
+      font-size: 1.8em;
+      margin: 0;
+
+      a, a:hover {
+        color: $color-text-1st;
+      }
+    }
+
+    address, time {
+      display: inline;
+      font-style: italic;
+      font-family: $font-2nd;
+      color: $color-text-2nd;
+      font-size: 0.8em;
+    }
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  a {
+    color: $color-text-2nd;
+
+    &:hover {
+      text-decoration: underline;
+      color: $color-text-2nd;
+    }
+
+    &.btn {
+      &:link, &:visited {
+        background-color: $color-bg-2nd;
+        border-color: $color-bg-2nd;
+        color: $color-text-3rd;
+      }
+
+      &:hover {
+        background-color: $color-text-1st;
+        border-color: $color-text-1st;
+        color: #000;
+      }
+
+      &:active {
+        background-color: $color-text-2nd;
+        border-color: $color-text-2nd;
+        color: #000;
+      }
+    }
+  }
+
+  img {
+    max-width: 100%;
+    max-height: auto;
+    padding: 0.25rem;
+    border-style: solid;
+    border-radius: 0.25rem;
+    border-color: $color-bg-2nd;
+    background-color: $color-bg-2nd;
+
+    &+em {
+      display: block;
+      font-size: 90%;
+      font-style: italic;
+      text-align: center;
+    }
+  }
+}
+
+footer {
+  margin-top: 20px;
+  p {
+    font-family: $font-1st;
+    text-align: center;
+    color: $color-text-3rd;
+    font-size: 0.9em;
+  }
+}
+
+a {
+  &.nav-link {
+    font-family: $font-1st;
+    font-weight: bold;
+
+    &:link, &:visited {
+      color: $color-text-2nd;
+    }
+
+    &:hover {
+      color: #000000;
+      background-color: $color-text-1st;
+    }
+
+    &:active {
+      background-color: $color-text-2nd;
+    }
+  }
+}
+
+
+code.highlighter-rouge {
+  border-radius: 5px;
+  padding: 2px;
+  background-color: $color-bg-2nd;
+  color: $color-text-3rd;
+}
+
+.highlight {
+  table, tr, td {
+    padding: 0;
+    margin: 0;
+
+    pre {
+      padding: 0;
+      margin: 0;
+      border: 0;
+
+      &.lineno {
+        color: $color-text-3rd;
+        margin: 0px 10px 0px 10px;
+      }
+    }
+  }
+
+  pre {
+    font-size: 80%;
+    background-color: $color-bg-1st;
+    //background-color: #aaa;
+    padding: 10px;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;;
+    border-color: $color-bg-2nd;
+  }
+}

@@ -1,29 +1,18 @@
-title: Republic of Pwning (RoP) Blog
-email: blog@rop.la
-description: >- # this means to ignore newlines until "baseurl:"
-  Blog about exploiting, researching, CTF competitions and more!
-  Team ROP.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://blog.rop.la" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: rop_la
-github_username:  rop-la
+title: "Republic of Pwning"
+email: devnull@rop.la
+author: "Republic of Pwning"
+description: "Reversing, exploiting, pentesting, ctf writeups... && ++hacking"
+logo: "/assets/img/logo.png"
+icon: "/assets/img/favicon.ico"
+icon_16: "/assets/img/favicon-16x16.png"
+icon_32: "/assets/img/favicon-32x32.png"
 
-# Build settings
+url: "https://blog.rop.la"
+baseurl: ""
+
 markdown: kramdown
-#theme: jekyll-theme-hacker
-theme: jekyll-theme-minimal
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+highlighter: rouge
+paginate: 3
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+plugins:
+  - jekyll-paginate

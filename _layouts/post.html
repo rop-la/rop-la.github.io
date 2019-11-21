@@ -1,0 +1,28 @@
+---
+layout: aside
+---
+
+<article>
+  <header>
+    <h1>
+      {{ page.title | escape }}
+    </h1>
+
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+  </header>
+
+  {{ content }}
+
+  <footer>
+    {% if page.previous != nil %}
+    <a class="btn btn-sm" href="{{ page.previous.url | relative_url }}">&lt;&lt; Prev</a>
+    {% endif %}
+
+    <a class="btn btn-sm" href="{{ 'index.html' | relative_url }}">Home</a>
+
+    {% if page.next != nil %}
+    <a class="btn btn-sm" href="{{ page.next.url | relative_url }}">Next &gt;&gt;</a>
+    {% endif %}
+  </footer>
+
+</article>

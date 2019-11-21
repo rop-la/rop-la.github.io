@@ -1,0 +1,34 @@
+
+{% if paginator.total_pages > 1 %}
+<nav>
+  <ul class="pagination">
+    <li class="page-item {% if paginator.page == 1 %}disabled{% endif %}">
+      {% assign page_path = "index.html" %}
+      {% if paginator.page > 2 %}
+        {% assign page_path = paginator.page | minus: 1 | prepend: "page" | append: "/index.html" %}
+      {% endif %}
+      <a class="page-link" href="{{ page_path | relative_url }}">&lt;&lt;</a>
+    </li>
+
+    {% for num_page in (1..paginator.total_pages) %}
+    {% assign page_path = "index.html" %}
+    {% if num_page != 1 %}
+      {% assign page_path = "page" | append: num_page | append: "/index.html" %}
+    {% endif %}
+    {% if num_page == paginator.page %}
+    <li class="page-item active">
+      <a class="page-link" href="{{ page_path | relative_url }}">{{ num_page }}</a>
+    </li>
+    {% else %}
+    <li class="page-item">
+      <a class="page-link" href="{{ page_path | relative_url }}">{{ num_page }}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
+
+    <li class="page-item {% if paginator.page == paginator.total_pages %}disabled{% endif %}">
+      <a class="page-link" href="{{ paginator.page | plus: 1 | prepend: 'page' | append: '/index.html' | relative_url }}">&gt;&gt;</a>
+    </li>
+  </ul>
+</nav>
+{% endif %}

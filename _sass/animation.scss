@@ -1,15 +1,14 @@
 
-#block {
-  animation-name: blink;
-  animation-duration: 0.7s;
-  animation-iteration-count: infinite;
+@keyframes blink {
+  0%    { opacity: 1.0; }
+  20%   { opacity: 0.0; }
+  50%   { opacity: 0.0; }
+  70%   { opacity: 1.0; }
+  100%  { opacity: 1.0; }
 }
 
-@keyframes blink {
-  from {
-    opacity: 1.0;
-  }
-  to {
-    opacity: 0.0;
-  }
+#block {
+  animation-name: blink;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
 }

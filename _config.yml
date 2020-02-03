@@ -2,6 +2,7 @@ title: "Republic of Pwning"
 email: devnull@rop.la
 author: "Republic of Pwning"
 description: "Reversing, exploiting, pentesting, ctf writeups... && ++hacking"
+excerpt_separator: "<!--more-->"
 logo: "/assets/img/logo.png"
 icon: "/assets/img/favicon.ico"
 icon_16: "/assets/img/favicon-16x16.png"

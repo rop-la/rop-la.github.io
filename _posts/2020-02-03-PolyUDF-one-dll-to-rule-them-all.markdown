@@ -1,6 +1,16 @@
-# PostgreSQL Universal UDF module for Windows
+---
+layout: post
+title:  "PostgreSQL universal UDF module for Windows"
+date:   2020-02-03 00:00:00 -0500
+categories: tools
+author: RoP Team
+---
+
 The tool we are releasing today implements some not so novel techniques but very cleaver for the purpose and not seen before in this specific use-case.
+
 The use of *User Defined Functions (UDF)* to achieve Code Execution in different DBMS is not new, but implementing it in a clean and efficient way for PostgreSQL, and particulary running under Windows OS, always required multiple steps: detecting the exact version of the DBMS (9.x, 10.x, etc.), after that modify the UDF dll source code or compile with the exact PostgreSQL version libs and headers. This process have been demostrated to be less than user friendly and prone to errors, and even considered too complex to worth the efforts (yes we are lazy for the simple tasks).
+
+<!--more-->
 
 **Note:** Uploading the DLL to the server is out of scope of this post as there are plenty of information about how doing it on the internet (Ex. using *pg_largeobject* [[1](https://www.postgresql.org/docs/9.1/catalog-pg-largeobject.html)][[2](https://github.com/nixawk/pentest-wiki/blob/master/2.Vulnerability-Assessment/Database-Assessment/postgresql/postgresql_hacking.md)]).
 
@@ -12,7 +22,7 @@ At this point we found that the module that we had compiled for another pentesti
 After this pentesting we had some spare time to discuss and get creative about this last experience with PostgreSQL. Digging in the source code and structures used in the UDF module the macro that caught our attention was *PG_MODULE_MAGIC_DATA* and also the structure *Pg_magic_struct* both defined in [fmgr.h][1]:
 
 ```c
-...
+//...
 /* Definition of the magic block structure */
 typedef struct    
 {
@@ -34,23 +44,23 @@ typedef struct
     NAMEDATALEN, \
     FLOAT8PASSBYVAL \    
 }    PG_MODULE_MAGIC
-...
+//...
 ```
 *Source: [fmgr.h][1]*
 
-Checking the macro we found a reference to the version value in the constant *PG_VERSION_NUM*, searching for the definition of this constant we found it in [pg_config.h.win32][2]. 
+Checking the macro we found a reference to the version value in the constant *PG_VERSION_NUM*, searching for the definition of this constant we found it in [pg_config.h.win32][2].
 ```c
-...
+//...
 /* PostgreSQL version as a number */
 #define PG_VERSION_NUM 130000
-...
+//...
 ```
 *Source: [pg_config.h.win32][2]*
 
 With this information we guess that the *postgres.exe* process checks the value of this field to validate if the module have been compiled using the headers for its specific version, as this value is divided by 100 only major and minor version are validated and the revision number is discarded. The *postgres.exe* process gets the module *PG_MODULE_MAGIC_DATA* address throught the ***Pg_magic_func*** export symbol and validates the structure's fields. This validation is made when the module is loaded by *postgres.exe*, before any User Defined Function can be loaded. This hyphotesis was confirmed while checking the PostgreSQL source code of the function *internal_load_library* defined in [dfmgr.c][3] and in the function *incompatible_module_error* also defined in that file those validations are performed.
 
 ```c
-...
+//...
 
 static void
 incompatible_module_error(const char *libname,
@@ -79,7 +89,8 @@ incompatible_module_error(const char *libname,
 				 errdetail("Server is version %d, library is version %s.",
 						   magic_data.version / 100, library_version)));
 	}
-...
+
+//...
 ```
 *Source: [dfmgr.c][3]*
 
@@ -92,7 +103,7 @@ Wrth the strategy defined and the required information accessible we needed to f
 #### Thread Local Storage (TLS)
 A  key concept we need to understand is *Thread Local Storage (TLS)*:  *`"Thread-local storage (TLS) is a computer programming method that uses static or global memory local to a thread."`* - *[Wikipedia][5]*, this method is implemented in different ways by each compiler and/or Operating System. In the case of windows it is defined as:  
 *`"Thread Local Storage (TLS) is the method by which each thread in a given multithreaded process can allocate locations in which to store thread-specific data. Dynamically bound (run-time) thread-specific data is supported by way of the TLS API (TlsAlloc). Win32 and the Microsoft C++ compiler now support statically bound (load-time) per-thread data in addition to the existing API implementation."`*-
-*[Microsoft][6]*. In the TLS Windows defines and stores data objects that are not automatic variables (defined in the limited thread stack), as these objects and data are stored unintialized there must be a mechanism to initialize the whenever a thread is created, this mechanism are the ***TLS Callbacks***. 
+*[Microsoft][6]*. In the TLS Windows defines and stores data objects that are not automatic variables (defined in the limited thread stack), as these objects and data are stored unintialized there must be a mechanism to initialize the whenever a thread is created, this mechanism are the ***TLS Callbacks***.
 #### TLS Callbacks
 TLS' Callbacks are the way that windows allows the initialization of all the data and objects defined as thread-specific. To comply with the desired function of TLS' Callbacks, these must be called before the main program's entrypoint. Abusing this requirement we can execute any code that we want before the main programs code, **even before the PostgreSQL validations!**
 ### Putting the pieces together
@@ -277,9 +288,9 @@ Datum sys_cleanup(PG_FUNCTION_ARGS) {
 		NULL,			// default security attributes
 		0,				// use default stack size  
 		CleanUp,		// thread function name
-		NULL,			// argument to thread function 
-		0,				// use default creation flags 
-		NULL);			// returns the thread identifier 
+		NULL,			// argument to thread function
+		0,				// use default creation flags
+		NULL);			// returns the thread identifier
 
 	PG_RETURN_INT32(result);
 }
@@ -298,7 +309,7 @@ DWORD WINAPI CleanUp(LPVOID lpParam)
 ```
 *Source: [main.c][7]*
 ## We want it!
-Well after this brief explanation the our has come: Release time! The complete implementation is available on our GitHub repository: [PolyUDF][11] 
+Well after this brief explanation the our has come: Release time! The complete implementation is available on our GitHub repository: [PolyUDF][11]
 
 
 [1]:https://github.com/postgres/postgres/blob/master/src/include/fmgr.h

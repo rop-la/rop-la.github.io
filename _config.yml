@@ -17,3 +17,4 @@ paginate: 3
 
 plugins:
   - jekyll-paginate
+theme: jekyll-theme-minimal

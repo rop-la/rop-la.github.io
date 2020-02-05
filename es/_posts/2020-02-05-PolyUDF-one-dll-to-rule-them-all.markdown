@@ -8,4 +8,4 @@ lang: es
 lang-ref: polyudf-one-dll-to-rule-them-all
 ---
 
-[Post en Ingles](https://blog.rop.la/en/tools/2020/02/04/PolyUDF-one-dll-to-rule-them-all.html)
+[Post en Ingles](https://blog.rop.la/en/tools/2020/02/05/PolyUDF-one-dll-to-rule-them-all.html)

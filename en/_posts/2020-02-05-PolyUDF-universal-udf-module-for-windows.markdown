@@ -5,7 +5,7 @@ date:   2020-02-05 00:00:00 -0500
 categories: tools
 author: RoP Team
 lang: en
-lang-ref: polyudf-one-dll-to-rule-them-all
+lang-ref: polyudf-universal-udf-module-for-windows
 ---
 
 The tool we are releasing today implements some not so novel techniques but very cleaver for the purpose and not seen before in this specific use-case.

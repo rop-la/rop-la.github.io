@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "PostgreSQL universal UDF module for Windows"
-date:   2020-02-04 00:00:00 -0500
+date:   2020-02-05 00:00:00 -0500
 categories: tools
 author: RoP Team
 lang: en

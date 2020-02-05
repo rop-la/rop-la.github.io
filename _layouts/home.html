@@ -2,6 +2,8 @@
 layout: aside
 ---
 
+{% assign posts = site.posts | where:"lang", page.lang %}
+
 {% include pagination.html %}
 
 {% if paginator.posts.size > 0 %}

@@ -2,10 +2,6 @@
 layout: aside
 ---
 
-<h1>{{page.lang}}</h1>
-
-{% assign site.posts = site.posts | where:"lang", page.lang %}
-
 {% if paginator.posts.size > 0 %}
 
   {% for post in paginator.posts %}

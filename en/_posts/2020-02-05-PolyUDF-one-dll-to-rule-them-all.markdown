@@ -311,9 +311,9 @@ DWORD WINAPI CleanUp(LPVOID lpParam)
 *Source: [main.c][7]*
 ## We want it!
 Well after this brief explanation the our has come: Release time! And video Time! The complete implementation is available on our GitHub repository: [PolyUDF][11]
-
+{:refdef: style="text-align: center;"}
 [![PolyUDF on action!](http://img.youtube.com/vi/-89qvnDvFek/0.jpg)](http://www.youtube.com/watch?v=-89qvnDvFek "PolyUDF - PostgreSQL universal UDF module for Windows")
-
+{: refdef}
 
 [1]:https://github.com/postgres/postgres/blob/master/src/include/fmgr.h
 [2]:https://github.com/postgres/postgres/blob/master/src/include/pg_config.h.win32

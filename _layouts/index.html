@@ -2,13 +2,9 @@
 layout: aside
 ---
 
-<h1>{{page.lang}}</h1>
+{% assign posts = site.posts | where:"lang", page.lang %}
 
-{% assign site.posts = site.posts | where:"lang", page.lang %}
-
-{% if paginator.posts.size > 0 %}
-
-  {% for post in paginator.posts %}
+{% for post in  posts  %}
     <article>
       <header>
           <h1>
@@ -23,8 +19,4 @@ layout: aside
         <a class="btn btn-sm" href="{{ post.url | relative_url }}">Read more</a>
       </footer>
     </article>
-  {% endfor %}
-
-{%- endif -%}
-
-{% include pagination.html %}
+{% endfor %}

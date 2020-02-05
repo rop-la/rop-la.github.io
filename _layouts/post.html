@@ -8,6 +8,7 @@ layout: aside
       {{ page.title | escape }}
     </h1>
     <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+	<em>
 	{% if page.layout != 'index' %}
 	  {% assign posts=site.posts | where:"lang-ref", page.lang-ref | sort: 'lang' %}
 	  {% if posts.size == 0 %}
@@ -15,10 +16,11 @@ layout: aside
 	  {% endif %}
 	  {% if posts.size > 1 %}
 		{% for post in posts %}
-		<a href="{{ site.base-url }}{{ post.url }}" class="{{ post.lang }} title="View in {{post.lang}}">{{ post.lang }}</a>
+		<a href="{{ site.base-url }}{{ post.url }}" class="{{ post.lang }} title="View in {{post.lang}}">{{ post.lang }}</a>&nbsp;|&nbsp;
 		{% endfor %}
 	  {% endif %}
 	{% endif %}
+	</em>
 
   </header>
 

@@ -16,7 +16,7 @@ layout: aside
 	  {% endif %}
 	  {% if posts.size > 1 %}
 		{% for post in posts %}
-		<a href="{{ site.base-url }}{{ post.url }}" class="{{ post.lang }} title="View in {{post.lang}}">{{ post.lang }}</a>&nbsp;|&nbsp;
+		<a href="{{ site.base-url }}{{ post.url }}" class="{{ post.lang }} title="View in {{post.lang}}">&nbsp;|&nbsp;[{{ post.lang }}]</a>
 		{% endfor %}
 	  {% endif %}
 	{% endif %}

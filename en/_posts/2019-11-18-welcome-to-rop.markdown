@@ -4,9 +4,6 @@ title:  "Welcome to Republic of Pwning!"
 date:   2019-11-18 18:23:35 -0500
 categories:  social
 lang: en
-pagination: 
-  enabled: true
-  locale: en
 ---
 
 This is our first post, from **Republic of Pwning (RoP)**.

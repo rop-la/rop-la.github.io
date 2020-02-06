@@ -11,18 +11,10 @@ $font-2nd: 'Roboto', sans-serif;
 
 $color-bg-1st: #222;
 $color-bg-2nd: #333;
-$color-text-1st: #ff6600;
-$color-text-2nd: #ff9933;
-$color-text-3rd: #a0a0a0;
 
-//$color-text-1st: #fff;
-//$color-text-2nd: #ddd;
-$color-text-1st: #2E86C1; //#5D6D7E;
-$color-text-2nd: #5D6D7E; //#3498DB; //#AEB6BF;
-
-//$color-text-1st: #C0392B;
-//$color-text-2nd: #CD6155;
-//$color-text-2nd: #F1C40F;
+$color-text-1st: #2E86C1;
+$color-text-2nd: #7D8D9E;
+$color-text-3rd: #c0c0c0;
 
 
 * {
@@ -57,10 +49,14 @@ h3, h4 {
   color: $color-text-2nd;
 }
 
-p {
+p, ul {
   font-family: $font-2nd;
   text-align: justify;
   color: $color-text-3rd;
+}
+
+ul {
+  padding-left: 30px;
 }
 
 header {

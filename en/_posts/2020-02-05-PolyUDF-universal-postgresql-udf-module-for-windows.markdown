@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "PostgreSQL universal UDF module for Windows"
+title:  "PolyUDF: Universal PostgreSQL UDF module for Windows"
 date:   2020-02-05 00:00:00 -0500
 categories: tools
 author: RoP Team
 lang: en
-lang-ref: polyudf-universal-udf-module-for-windows
+lang-ref: polyudf-universal-postgresql-udf-module-for-windows
 ---
 
 The tool we are releasing today implements some not so novel techniques but very cleaver for the purpose and not seen before in this specific use-case.
@@ -314,6 +314,14 @@ Well after this brief explanation the our has come: Release time! And video Time
 {:refdef: style="text-align: center;"}
 [![PolyUDF on action!](http://img.youtube.com/vi/-89qvnDvFek/0.jpg)](http://www.youtube.com/watch?v=-89qvnDvFek "PolyUDF - PostgreSQL universal UDF module for Windows"){:target="_blank"}
 {: refdef}
+
+Follow us on our twitter account [@rop-la][rop-twitter], our public Github repositories [RoP-LA][rop-github] and [Youtube Channel][rop-youtube].
+
+[rop-web]: https://www.rop.la
+[rop-twitter]:   https://twitter.com/rop_la
+[rop-github]:   https://github.com/rop-la/
+[rop-youtube]: https://www.youtube.com/channel/UCg01TfhxLro71ppULtIBAjw
+
 
 [1]:https://github.com/postgres/postgres/blob/master/src/include/fmgr.h
 [2]:https://github.com/postgres/postgres/blob/master/src/include/pg_config.h.win32

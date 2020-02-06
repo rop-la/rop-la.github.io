@@ -8,16 +8,16 @@ lang: es
 lang-ref: polyudf-universal-postgresql-udf-module-for-windows
 ---
 
-La herramienta que estamos liberando el día de hoy tiene como finalidad el acabar con los problemas a los que se enfretan los pentesters cuando desean conseguir ejecución de comandos del OSen un servidor de base de datos con PostgreSQL. En este caso específicos sobre plataforma Windows.
+La herramienta que estamos liberando el día de hoy tiene como finalidad acabar con los problemas a los que se enfretan los pentesters cuando desean conseguir ejecución de comandos en un servidor de base de datos con PostgreSQL. En este caso específicos sobre plataforma Windows.
 
-Normalmente para poder aprovechar el acceso con privilegios dba (como el usuario *postgres* por ejemplo) en una instancia PostgreSQL sobre Windows, uno tendría que compilar el Modulo UDF (DLL) usando las librerias y cabeceras de la versión específica de PostgreSQL, lo cual implica tener instalado el PostgreSQL y el Visual Studio en la versión que podamos conseguir. El objetivo de este proyecto es eliminar todos eso requerimientos, teniendo una sola DLL (por arquitectura x86/x64) que sea compatible con cualquier versión de PostgreSQL desde la versión 9.4 en adelante.
+Usualmente, para poder aprovechar el acceso con privilegios dba (como el usuario *postgres*) en una instancia PostgreSQL sobre Windows, se tie que compilar el Modulo UDF (DLL) usando las librerías y cabeceras de la versión específica de PostgreSQL, implicando un mayor trabajo instalar la versión de PostgreSQL, además de Visual Studio (o el compilador de su preferencia), y hacerlo cada vez que la versión de PostgreSQL sea distinta. El objetivo de este proyecto es eliminar todos esos requerimientos, teniendo una sola DLL (por arquitectura x86/x64) que sea **compatible con cualquier versión de PostgreSQL** desde la versión 9.4 en adelante. Para lograrlo, se emplearon algunas técnicas y métodos que pueden servir en situaciones similares a las encontradas en este caso. Asimismo, se han incorporado funcionalidades no encontradas en ningún otro proyecto o módulo desarrollado para este fin. <br/>
+Las principales características de esta herramienta son:
+- Soporte multiversión (9.4+, version 1 de la convención de llamada de PostgreSQL)
+- Soporte para x86 y x64.
+- Una función que regitra todas las demás funciones en un solo paso.
+- Eliminación limpia del módulo de memoria, permitendoe eliminar el DLL del disco sin tener que reiniciar el servicio de PostgreSQL.
 
-Para lograr este objetivo se emplearon algunas técnicas y métodos que pueden servir para situaciones similares a las encontradas en este caso. Asimismo, se han incorporado funcionalidades no vistas en ningún otro proyecto o módulo desarrollado para este fin. Las principales características de esta herramienta son:<br/><br/>
-<em>- Soporte multiversión (9.4+ - Version 1 de la convención de llamada de PostgreSQL) y multiarquitectura (x86/x64).</em><br/>
-<em>- Una sola función que regitra todas las demás funciones en un solo paso!</em><br/>
-<em>- Eliminación limpia del módulo de memoria. Permite eliminar el DLL del disco sin tener que reiniciar el servicio de PostgreSQL.</em><br/>
-
-Ahora sin más palabras, es hora de un video:
+Demo:
 
 {:refdef: style="text-align: center;"}
 [![PolyUDF on action!](http://img.youtube.com/vi/-89qvnDvFek/0.jpg)](http://www.youtube.com/watch?v=-89qvnDvFek "PolyUDF - PostgreSQL universal UDF module for Windows"){:target="_blank"}

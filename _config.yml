@@ -2,6 +2,8 @@ title: "Republic of Pwning"
 email: devnull@rop.la
 author: "Republic of Pwning"
 description: "Reversing, exploiting, pentesting, ctf writeups... && ++hacking"
+keywords: "reversing, exploiting, pentesting, ctf, writeups, hacking"
+
 excerpt_separator: "<!--more-->"
 logo: "/assets/img/logo.png"
 icon: "/assets/img/favicon.ico"
@@ -17,4 +19,3 @@ paginate: 3
 
 plugins:
   - jekyll-paginate
-theme: jekyll-theme-minimal

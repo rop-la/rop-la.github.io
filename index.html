@@ -4,28 +4,3 @@ sitemap: false
 permalink: /
 redirect_to:  /en/
 ---
-
-{% include pagination.html %}
-
-{% if paginator.posts.size > 0 %}
-
-  {% for post in paginator.posts %}
-    <article>
-      <header>
-          <h1>
-            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-          </h1>
-          <time datetime="{{ page.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-      </header>
-
-      {{ post.excerpt }}
-
-      <footer>
-        <a class="btn btn-sm" href="{{ post.url | relative_url }}">Read more</a>
-      </footer>
-    </article>
-  {% endfor %}
-
-{%- endif -%}
-
-{% include pagination.html %}

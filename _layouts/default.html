@@ -4,6 +4,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{{ post.description | default: page.description | default: site.description }}">
+    <meta name="keywords" content="{{ post.keywords | default: page.keywords | default: site.keywords }}">
+    <meta name="author" content="{{ post.author | default: page.author | default: site.author }}"/>
 
     <link rel="icon" type="image/png" href="{{ site.icon_16 | relative_url }}" sizes="16x16">
     <link rel="icon" type="image/png" href="{{ site.icon_32 | relative_url }}" sizes="32x32">

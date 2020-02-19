@@ -19,9 +19,7 @@ Las principales características de esta herramienta son:
 
 Demo:
 
-{:refdef: style="text-align: center;"}
-[![PolyUDF on action!](http://img.youtube.com/vi/-89qvnDvFek/0.jpg)](http://www.youtube.com/watch?v=-89qvnDvFek "PolyUDF - PostgreSQL universal UDF module for Windows"){:target="_blank"}
-{: refdef}
+<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/-89qvnDvFek" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ## Liberando a Poly!
 Para poder acceder al código fuente del proyecto pueden visitar el repositorio en nuestra cuenta de [Github][1].

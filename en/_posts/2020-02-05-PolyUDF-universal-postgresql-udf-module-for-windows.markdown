@@ -311,9 +311,8 @@ DWORD WINAPI CleanUp(LPVOID lpParam)
 *Source: [main.c][7]*
 ## We want it!
 Well after this brief explanation the our has come: Release time! And video Time! The complete implementation is available on our GitHub repository: [PolyUDF][11]
-{:refdef: style="text-align: center;"}
-[![PolyUDF on action!](http://img.youtube.com/vi/-89qvnDvFek/0.jpg)](http://www.youtube.com/watch?v=-89qvnDvFek "PolyUDF - PostgreSQL universal UDF module for Windows"){:target="_blank"}
-{: refdef}
+<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/-89qvnDvFek" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
 
 Follow us on our twitter account [@rop-la][rop-twitter], our public Github repositories [RoP-LA][rop-github] and [Youtube Channel][rop-youtube].
 

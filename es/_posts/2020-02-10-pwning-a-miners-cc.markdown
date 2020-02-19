@@ -106,7 +106,7 @@ curl -H 'Authorization: Bearer SECRET' 'http://BOTNET:3344/admin/getClientStatus
 
 Finalmente, este vídeo muestra como podemos explotar la vulnerabilidad para reemplazar la dirección del *wallet* de Monero en la configuración de los clientes.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Ol3s-5svYbM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/Ol3s-5svYbM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 Lo siento Naruto*, tu kung fu no es bueno ;)
 

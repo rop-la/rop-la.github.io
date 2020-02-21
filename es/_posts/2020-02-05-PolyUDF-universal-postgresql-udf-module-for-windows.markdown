@@ -10,6 +10,8 @@ lang-ref: polyudf-universal-postgresql-udf-module-for-windows
 
 La herramienta que estamos liberando el día de hoy tiene como finalidad acabar con los problemas a los que se enfretan los pentesters cuando desean conseguir ejecución de comandos en un servidor de base de datos con PostgreSQL. En este caso específicos sobre plataforma Windows.
 
+<!--more-->
+
 Usualmente, para poder aprovechar el acceso con privilegios dba (como el usuario *postgres*) en una instancia PostgreSQL sobre Windows, se tie que compilar el Modulo UDF (DLL) usando las librerías y cabeceras de la versión específica de PostgreSQL, implicando un mayor trabajo instalar la versión de PostgreSQL, además de Visual Studio (o el compilador de su preferencia), y hacerlo cada vez que la versión de PostgreSQL sea distinta. El objetivo de este proyecto es eliminar todos esos requerimientos, teniendo una sola DLL (por arquitectura x86/x64) que sea **compatible con cualquier versión de PostgreSQL** desde la versión 9.4 en adelante. Para lograrlo, se emplearon algunas técnicas y métodos que pueden servir en situaciones similares a las encontradas en este caso. Asimismo, se han incorporado funcionalidades no encontradas en ningún otro proyecto o módulo desarrollado para este fin. <br/>
 Las principales características de esta herramienta son:
 - Soporte multiversión (9.4+, version 1 de la convención de llamada de PostgreSQL)

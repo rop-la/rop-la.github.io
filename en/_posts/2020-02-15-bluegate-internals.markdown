@@ -8,7 +8,6 @@ lang: en
 lang-ref: bluegate-internals
 ---
 
-## BlueGate internals
 While I was on vacations, there was a patch on RD Gateway CVE-2020-0609 and CVE-2020-0610, I never listen about a Gateway on Remote Desktop so I found it interesting to analyze.
 
 I stopped sunbathing on the beach, turned on the laptop and started. After doing a PoC that worked correctly triggering a DoS, some post began to apper about that. Then, I was in doubt if I should write about t, and here we are.

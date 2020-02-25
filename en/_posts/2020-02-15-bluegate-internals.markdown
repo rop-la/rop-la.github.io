@@ -13,7 +13,8 @@ While I was on vacations, there was a patch on RD Gateway CVE-2020-0609 and CVE-
 
 I stopped sunbathing on the beach, turned on the laptop and started. After doing a PoC that worked correctly triggering a DoS, some post began to apper about that. Then, I was in doubt if I should write about t, and here we are.
 
-<!-- more -->
+<!--more-->
+
 ### RD Gateway
 RD Gateway, previously [Terminal Services Gateway (TS Gateway)][2], has a business focus, allows routing for a Remote Desktop out side of the enterprise. RD Gateway allows use several policies to users can authenticate, then the gateway will forward RDP traffic to the windows machine specified by the user, allowing only the gateway to be exposed to the internet and not access to RDP directly.
 

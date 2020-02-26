@@ -2,6 +2,10 @@ title: "Republic of Pwning"
 email: devnull@rop.la
 author: "Republic of Pwning"
 description: "Reversing, exploiting, pentesting, ctf writeups... && ++hacking"
+desc: 'Reversing, exploiting, pentesting, ctf writeups... && ++hacking
+
+Follow us on our twitter account <a href="https://twitter.com/rop_la"><i class="fab fa-twitter"></i>@rop-la</a>, our public Github repositories <a href="https://github.com/rop-la/"><i class="fab fa-github"></i>RoP-LA</a> and <a href="https://www.youtube.com/channel/UCg01TfhxLro71ppULtIBAjw"><i class="fab fa-youtube"></i>Youtube Channel</a>.'
+
 keywords: "reversing, exploiting, pentesting, ctf, writeups, hacking"
 
 excerpt_separator: "<!--more-->"

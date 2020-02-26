@@ -109,7 +109,7 @@ Now going back to the caller, to the vulnerable function. `r13` is the packet ad
 .text:000000018006538D cmp     ecx, edx
 .text:000000018006538F jbe     loc_180065426
 ```
-That assembly construction is used to check an out of bounds of index, at the end of that snippet you can see how it is used as index `cmp     [r14+rdx*4+568h], ecx`. Then, `[r13+4]` is an index or ID, remember that a large message is split in multiple fragments that must carry an ID to be reconstructed, and `[r13+6]` is the total number of fragments that will be processed, for that reason the comparison is made, to know if all the fragments were received,  ` jbe     loc_180065426`. 
+That assembly construction is used to check an out of bounds of index, at the end of that snippet you can see how it is used as index `cmp     [r14+rdx*4+568h], ecx`. Then, `[r13+4]` is an index or ID, remember that a large message is split in multiple fragments that must carry an ID to be reconstructed, and `[r13+6]` is the total number of fragments that will be processed, for that reason the comparison is made, to know if all the fragments were received,  `jbe     loc_180065426`. 
 
 #### Another bug
 Following with the same idea, when a fragment is received it will check if any previous fragment has already been received.
@@ -120,7 +120,7 @@ Following with the same idea, when a fragment is received it will check if any p
 .text:000000018006542B cmp     [r14+rdx*4+568h], ecx
 .text:0000000180065433 jz      short loc_180065461
 ```
-If the fragment was received, the result will be true and the execution flow jump to the function epilogue. But if it is fales execution flow will continue. Now, `rdx` is `packet->fragment_id`, and I control it. So if I set `packet->number_of_fragments = 0xFFFF` and `packet->fragment_id = 0xFFFE`, a crash will be triggered.
+If the fragment was received, the result will be true and the execution flow jump to the function epilogue. But if it is false execution flow will continue. Now, `rdx` is `packet->fragment_id`, and I control it. So if I set `packet->number_of_fragments = 0xFFFF` and `packet->fragment_id = 0xFFFE`, a crash will be triggered.
 
     (a24.bcc): Access violation - code c0000005 (first chance)
     First chance exceptions are reported before any exception handling.

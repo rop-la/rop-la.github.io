@@ -8,6 +8,7 @@ layout: aside
       {{ page.title | escape }}
     </h1>
     <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>&nbsp;
+    {% include social-media-links.html %}
 	{% if page.layout != 'index' %}
 	  {% assign posts=site.posts | where:"lang-ref", page.lang-ref | sort: 'lang' %}
 	  {% if posts.size == 0 %}

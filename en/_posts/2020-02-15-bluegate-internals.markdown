@@ -196,3 +196,5 @@ Finally, the UDP_FRAGMENT packet could be rebuilt as seen in the image.
 [1]:https://www.kryptoslogic.com/blog/2020/01/rdp-to-rce-when-fragmentation-goes-wrong/
 [2]: https://docs.microsoft.com/en-us/windows/win32/termserv/terminal-services-is-now-remote-desktop-services](https://docs.microsoft.com/en-us/windows/win32/termserv/terminal-services-is-now-remote-desktop-services)
 [3]: https://docs.microsoft.com/en-us/windows/win32/http/processing-requests](https://docs.microsoft.com/en-us/windows/win32/http/processing-requests)
+
+> Written by **RoP Team**

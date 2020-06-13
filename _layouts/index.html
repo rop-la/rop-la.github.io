@@ -1,0 +1,22 @@
+---
+layout: banner
+---
+
+{% for post in site.posts limit:5 %}
+<section>
+    <div class="container">
+        <header>
+            <h3>
+                <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+            </h3>
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+        </header>
+
+        <p>{{ post.excerpt }}</p>
+
+        <footer>
+            <a class="btn btn-sm" href="{{ post.url | relative_url }}">Read more</a>
+        </footer>
+    </div>
+</section>
+{% endfor %}

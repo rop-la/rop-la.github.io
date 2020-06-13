@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>{{ page.title | default: site.title }}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ 'assets/css/main.css' | relative_url }}" />
+		<link rel="stylesheet" href="{{ 'assets/css/native.css' | relative_url }}" />
+	</head>
+	<body class="is-preload">
+
+		{% include header.html %}
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						
+						{{ content }}
+	
+					</div>
+
+				{% include footer.html %}
+
+			</div>
+
+			{% include scripts.html %}
+	</body>
+</html>

@@ -190,8 +190,9 @@ The buffer is allocated by `kernel32!LocalAlloc`, that means that the buffer is 
 
 On the patch of those vulnerabilities added checks for fragment_id and number_of_fragments :P. if they are greater than 64 it will return an error code of `0x8000FFFF`, with that information is possible does a scanner sending `fragment_id = 65` and if not is vulnerable it will return the error code previously mentioned.
 
-Finally, the UDP_FRAGMENT packet could be rebuilt as seen in the image. 
-![UDP Fragment Layout](/assets/img/202002/udp-packet.png){: width=auto height=auto style="margin-left: auto; margin-right: auto"}
+Finally, the UDP_FRAGMENT packet could be rebuilt as seen in the image.
+
+![UDP Fragment Layout](/assets/img/202002/udp-packet.png){: class="image fit" style="max-width: 500px;"}
 
 [1]:https://www.kryptoslogic.com/blog/2020/01/rdp-to-rce-when-fragmentation-goes-wrong/
 [2]: https://docs.microsoft.com/en-us/windows/win32/termserv/terminal-services-is-now-remote-desktop-services](https://docs.microsoft.com/en-us/windows/win32/termserv/terminal-services-is-now-remote-desktop-services)

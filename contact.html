@@ -10,7 +10,7 @@ order: 4
     <div class="container">
         <h3>Contact us</h3>
         <p>Feel free to contact us.</p>
-        <form method="post" action="mailto:{{ site.email | escape }}">
+        <form method="get" action="mailto:{{ site.email | escape }}">
             <div class="row gtr-uniform">
                 <div class="col-12">
                     <input type="text" name="subject" id="subject" placeholder="Subject" />

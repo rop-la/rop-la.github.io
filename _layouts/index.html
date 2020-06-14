@@ -3,10 +3,7 @@ layout: banner
 lang: en
 ---
 
-{% assign lang = page.lang %}
-{% if lang == nil %}
-  {% assign lang="en" %}
-{% endif %}
+{% assign lang = page.lang  | default: site.lang %}
 
 {% assign posts = site.posts | where:"lang", lang %}
 
@@ -17,13 +14,17 @@ lang: en
             <h3>
                 <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
             </h3>
-            <time datetime="{{ page.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+            <em class="">
+                <time datetime="{{ page.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+            </em>            
         </header>
 
         <p>{{ post.excerpt }}</p>
 
         <footer>
-            <a class="btn btn-sm" href="{{ post.url | relative_url }}">Read more</a>
+            <a class="button alt small" href="{{ post.url | relative_url }}">
+                {{ site.data.langs | where: "lang", lang | map: "read_more" | first }}
+            </a>
         </footer>
     </div>
 </section>

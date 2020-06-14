@@ -1,12 +1,14 @@
-
 # Basic Info
 title: Republic of Pwning
 description: Hacking, Reversing, Exploiting, CTFs...
+keywords: hacking, ctf, reversing, exploits, writeup
+author: RoP Team
 email: devnull@rop.la
+lang: en  # default language
 
 # URL Configs
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://blog.rop.la"
+baseurl: ""
 
 # Social Networks
 twitter_username: rop_la

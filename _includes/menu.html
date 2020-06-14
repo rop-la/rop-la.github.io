@@ -1,6 +1,5 @@
 <nav id="nav">
     <ul>
-
         {% assign menu_pages = site.pages | where: "menu", "true" | sort: "order" %}
         {% for node in menu_pages %}
             {% if page.url == node.url %}
@@ -9,11 +8,5 @@
                 <li><a href="{{ node.url | relative_url }}">{{node.title}}</a></li>
             {% endif %}
         {% endfor %}
-<!--
-        <li><a href="one">About</a></li>
-        <li><a href="two">Things I Can Do</a></li>
-        <li><a href="three">Our team</a></li>
-        <li><a href="contact.html#contact">Contact us</a></li>
--->
     </ul>
 </nav>

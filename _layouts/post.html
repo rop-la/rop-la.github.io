@@ -6,6 +6,19 @@ layout: default
     <article class="container">
         <header>
             <h2>{{ page.title }}</h2>
+            {% assign posts=site.posts | where:"lang-ref", page.lang-ref | sort: 'lang' %}
+            {% if posts.size == 0 %}
+              {% assign posts=site.pages | where:"lang-ref", page.lang-ref | sort: 'lang' %}
+            {% endif %}
+            {% if posts.size > 1 %}
+              {% for post in posts %}
+                {% if post.lang == page.lang %}
+              <b><a href="{{ site.base-url }}{{ post.url }}" class="{{ post.lang }} title="View in {{post.lang}}">[<img src="{{ 'favicon-16x16.png' | relative_url}}"/>{{ post.lang }}]</a></b>
+                {% else %}
+              <a href="{{ site.base-url }}{{ post.url }}" class="{{ post.lang }} title="View in {{post.lang}}">[{{ post.lang }}]</a>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
         </header>
 
         {{ content }}

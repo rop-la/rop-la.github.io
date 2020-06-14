@@ -1,8 +1,16 @@
 ---
 layout: banner
+lang: en
 ---
 
-{% for post in site.posts limit:5 %}
+{% assign lang = page.lang %}
+{% if lang == nil %}
+  {% assign lang="en" %}
+{% endif %}
+
+{% assign posts = site.posts | where:"lang", lang %}
+
+{% for post in posts limit:5 %}
 <section>
     <div class="container">
         <header>

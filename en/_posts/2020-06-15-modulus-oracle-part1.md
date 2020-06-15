@@ -59,4 +59,4 @@ We are investigating another useful scenarios to apply this *Modulus Oracle Atta
 See you then!
 
 
-> Writen by **RoP Team**
+> Written by **RoP Team**

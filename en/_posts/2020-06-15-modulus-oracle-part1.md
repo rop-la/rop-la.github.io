@@ -2,7 +2,7 @@
 layout: post
 title: "Modulus Oracle: Breaking a RSA misuse"
 author: "RoP Team"
-description: "A misuse of RSA allow us to break the cryptosystem"
+description: "A misuse of RSA allows us to break the cryptosystem"
 keywords: "RSA, crypto, oracle, modulus"
 date: 2020-06-15 00:00:00 -0500
 categories: pentesting

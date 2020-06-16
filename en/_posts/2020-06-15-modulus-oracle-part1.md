@@ -50,7 +50,7 @@ We have coded a Flask application that simulates this vulnerability. For dramati
 
 And now, view it in action:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gQRgRELH6Zw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/C91ej0HSFPA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br>
 

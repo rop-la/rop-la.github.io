@@ -126,7 +126,9 @@ Now we have all the pieces: a vulnerable JWT implementation and a Modulus Oracle
 
 We have published in our [github repository][9] a vulnerable CTF-like application to demonstrate the described attack. You can try solving it by yourself or see the solution in the script `modulus-oracle-jwt.py`.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ygOps-lZaxc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<br>
 
 Because web applications generally don't show errors, it is unlikely that we can use them to get a Modulus Oracle. But is possible to get a Modulus Oracle in another way.
 

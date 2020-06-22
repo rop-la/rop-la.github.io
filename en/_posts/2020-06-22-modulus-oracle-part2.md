@@ -16,9 +16,9 @@ In a [previous post][1] we told about the *Modulus Oracle Attack*. This techniqu
 
 ### JWT and the algorithm switch
 
-[JWT][2] is a widely used technology for authorization in web applications. It allows us create and verify authorization tokens using cryptography to guarantee the token's integrity. However exists vulnerabilities in certain JWT implementations that allows us forge tokens and bypass authorization controls. An attack against some JWT libraries is detailed in [this post][3]. Today all these vulnerabilities should be fixed but it is still possible to find them with the help of a careless developer.
+[JWT][2] is a widely used technology for authorization in web applications. It allows us to create and verify authorization tokens using cryptography to guarantee the token's integrity. However exist vulnerabilities in certain JWT implementations that allow us to forge tokens and bypass authorization controls. An attack against some JWT libraries is detailed in [this post][3]. Today all these vulnerabilities should be fixed but it is still possible to find them with the help of a careless developer.
 
-For example, is very easy to screw it up by using the python library [Authlib][4]. The following code shows how the `decode` function accepts in the same way a valid token and a forged one. We have `Authlib 0.14.3` (the latest to date)
+For example, is very easy to screw it up by using the python library [Authlib][4]. The following code shows how the `decode` function accepts in the same way a valid token and a forged one. We are using `Authlib 0.14.3` (the latest to date).
 
 ```py
 from base64 import urlsafe_b64encode as enc
@@ -72,7 +72,7 @@ FAKE DATA: {'admin': True}
 
 Write vulnerable code could be a little more harder with other libraries but not impossible.
 
-As you can see, to exploit this vulnerability we need the public key. We can use the public key from the SSL/TLS certificate but there is no guarantee that these keys be the same. So we had the idea to carry out a *Modulus Oracle Attack* to obtain the public key. We have searched for reasonably weak JWT libraries and vulnerable to *Modulus Oracle* and we found one.
+As you can see, to exploit this vulnerability we need the public key. We can use the public key from the SSL/TLS certificate but there is no guarantee that these keys will be the same. So we had the idea to carry out a *Modulus Oracle Attack* to obtain the public key. We have searched for reasonably weak JWT libraries and vulnerable to *Modulus Oracle* and we found one.
 
 ### gree/jose
 

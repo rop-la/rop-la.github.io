@@ -1,31 +1,27 @@
 ---
 layout: banner
-lang: en
 ---
 
-{% assign lang = page.lang  | default: site.lang %}
-
-{% assign posts = site.posts | where:"lang", lang %}
-
-{% for post in posts offset:5 %}
+{% assign posts = site.posts | where:"lang", "en" %}
 <section>
     <div class="container">
-        <header>
-            <h3>
-                <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-            </h3>
-            <em class="">
-                <time datetime="{{ page.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-            </em>            
-        </header>
-
-        <p>{{ post.excerpt }}</p>
-
-        <footer>
-            <a class="button alt small" href="{{ post.url | relative_url }}">
-                {{ site.data.langs | where: "lang", lang | map: "read_more" | first }}
-            </a>
-        </footer>
-    </div>
-</section>
+        <h3>EN</h4>
+    <ul>
+{% for post in posts %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
 {% endfor %}
+    </ul>
+</div>
+</section>
+
+{% assign posts = site.posts | where:"lang", "es" %}
+<section>
+    <div class="container">
+        <h3>ES</h4>
+    <ul>
+{% for post in posts %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
+{% endfor %}
+    </ul>
+</div>
+</section>

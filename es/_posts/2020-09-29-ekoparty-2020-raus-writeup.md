@@ -18,7 +18,7 @@ En el Main CTF de la Ekoparty, desde hace algunos años, se incluye la categorí
 
 > Une de nuestres researchers implementó AES en python. Con dicha implementación, cifró 2 archivos, uno de testing y el flag. Ambos archivos, encriptados, junto con la implementación, fueron subidas al repositorio de código. Volando de vuelta desde un cliente, perdió su computadora, junto con las versiones sin encriptar de los archivos y la CLAVE utilizada para cifrar los archivos. Necesitamos la flag con urgencia, elle solo recuerda haber probado la implementación encriptando "testingaes123456" y que la flag tenía el formato ONA{<sha256>}. ¿Nos podés ayudar a recuperar la flag?
 
-Nos entregan 3 archivos: [aes.py][2], [cipher.txt][2] y [testcipher.txt][3]. El primero es una implementación de AES en Python y los dos siguientes son, respectivamente, el flag y la cadena `testingaes123456` cifrados con la misma clave.
+Nos entregan 3 archivos: [aes.py][1], [cipher.txt][2] y [testcipher.txt][3]. El primero es una implementación de AES en Python y los dos siguientes son, respectivamente, el flag y la cadena `testingaes123456` cifrados con la misma clave.
 
 
 ### Análisis

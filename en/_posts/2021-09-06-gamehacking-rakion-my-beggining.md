@@ -156,7 +156,7 @@ The address of entity in-lobby is `0x354B7FC4`, but currently the  `entitiesmp!G
 struct _s_stage *__cdecl GetSelectLevelInfo()
 {
   FieldInfo objGFieldInfo = GetGlobalFieldInfo();
-  int game_type = objGFieldInfo->::GetGameType();
+  int game_type = objGFieldInfo->GetGameType();
   if ( IsBattleMap(game_type) )
     game_type = 1;
   return (struct _s_stage *)GetLevelInfo(game_type, objGFieldInfo->LevelInfo));

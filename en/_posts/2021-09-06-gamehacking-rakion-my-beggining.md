@@ -170,10 +170,9 @@ For now, here I leave just a small sample of what can we do getting the entities
 
 <br>
 
+> Written by [**Nox**][5]
 
 Follow us on our twitter account [@rop-la][rop-twitter], our public Github repositories [RoP-LA][rop-github] and [Youtube Channel][rop-youtube].
-
-> Written by [**Nox**][5]
 
 [rop-web]: https://www.rop.la
 [rop-twitter]: https://twitter.com/rop_la

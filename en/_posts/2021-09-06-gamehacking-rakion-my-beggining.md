@@ -173,6 +173,8 @@ For now, here I leave just a small sample of what can we do getting the entities
 
 Follow us on our twitter account [@rop-la][rop-twitter], our public Github repositories [RoP-LA][rop-github] and [Youtube Channel][rop-youtube].
 
+> Written by [**Nox**][5]
+
 [rop-web]: https://www.rop.la
 [rop-twitter]: https://twitter.com/rop_la
 [rop-github]: https://github.com/rop-la/
@@ -183,3 +185,4 @@ Follow us on our twitter account [@rop-la][rop-twitter], our public Github repos
 [2]:https://rakion.fandom.com/wiki/Rakion:_Chaos_Force
 [3]:https://rakion.fandom.com/wiki/Stage_Maps
 [4]:https://rakion.fandom.com/wiki/Cell_Creatures
+[5]:https://twitter.com/MrNox_

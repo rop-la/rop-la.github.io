@@ -90,7 +90,7 @@ memcpy(nak4_addr, taurus1_addr, 84);
 ```
 Nak4 is white nak, and when it is summoned three naks appear. It is why three Taurus are summoned.
 
-<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/watch?v=r1qFL2EPQRo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/r1qFL2EPQRo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 <br>
 
@@ -166,7 +166,7 @@ struct _s_stage *__cdecl GetSelectLevelInfo()
 
 For now, here I leave just a small sample of what can we do getting the entities.
 
-<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/watch?v=RCyeRa_HWCg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/RCyeRa_HWCg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 <br>
 

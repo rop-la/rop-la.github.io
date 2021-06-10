@@ -164,7 +164,7 @@ struct _s_stage *__cdecl GetSelectLevelInfo()
 ```
  Of course in the nexts blogposts I will explain how we can get it ;).
 
-For now, here I leave just a small sample of what can we do getting the entities.
+For now, here I leave just a small example of what can we do getting the entities.
 
 <div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/RCyeRa_HWCg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 

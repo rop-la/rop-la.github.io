@@ -1,4 +1,7 @@
 _site
+Gemfile
 .sass-cache
 .jekyll-metadata
+*.swp
+.jekyll-cache
 _drafts

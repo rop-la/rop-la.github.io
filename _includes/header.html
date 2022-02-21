@@ -8,6 +8,18 @@
         <h1 id="logo">{{ site.title | escape }}</h1>
 
         <p>{{ site.description | escape }}</p>
+
+        <span class="image" style="float:center;margin:10px" >
+            <a href="{{ 'en/' | relative_url}}">
+                <img src="{{ 'images/flag-en.png' | relative_url }}" alt="" width="25"/>
+            </a>
+        </span>
+        <span class="image" style="margin:10px">
+            <a href="{{ 'es/' | relative_url}}">
+                <img src="{{ 'images/flag-es.png' | relative_url }}"  alt="" width="25"/>
+            </a>
+        </span>
+
         
     </header>
 

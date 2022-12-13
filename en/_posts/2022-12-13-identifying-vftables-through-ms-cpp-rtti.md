@@ -141,7 +141,6 @@ const std::exception::`vftable' at 0x140003298
 const std::bad_array_new_length::`vftable' at 0x1400032f0
 const type_info::`vftable' at 0x140003278
 const B::`vftable' at 0x140003358
-const std::bad_alloc::`vftable'
 ```
 ## Future work
 There is a case where doesn't exist Run-Time Information Type but vftables are used, and I would like to handle that case. Furthermore, get the inherintance relationship hierarchy.

@@ -82,7 +82,7 @@ TYPEINFO_TD_MANGLED_NAME = "??_R0?AVtype_info@@@8"
 ```
 
 ## vftables lookup
-As I said before, the key to find vftables is `type_info::TypeDescriptor` structure. In the following image you can see in the left, the structure values and, in the right, the structure itself.
+As I said before, the key to find vftables is `type_info::TypeDescriptor` structure. In the following image you can see in the right, the structure values and, in the left, the structure itself.
 
 ![type_info::TypeDescriptor and its values](/assets/img/202212/typedescriptor-with-its-values.png){: class="image fit"}
 

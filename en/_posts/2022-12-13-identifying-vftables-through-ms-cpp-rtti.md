@@ -10,7 +10,7 @@ lang: en
 lang-ref: identifying-vftables-through-ms-cpp-rtti
 ---
 
-[Run-Time Type Information or RTTI][1], is a mechanism that exposes object types information at runtime, used to do safe type cast using `dynamic_cast<>` and to manipulate type information using `typeid` operator and  `std::type_info` class at runtime.
+[Run-Time Type Information or RTTI][1], is a mechanism that exposes object types information at runtime, used to do safe typecast, using `dynamic_cast<>` and to manipulate type information using `typeid` operator and  `std::type_info` class at runtime.
 
 There are some RTTI data structures, but in this post we will see two of them, almost some fields are importants to know class C++ inherintance relationship, class name, and polymorphism but they probably will be treated in a future post. To clarity, I'd like to mention that MSVC 64-bit compiler has definied `_RTTI_RELATIVE_TYPEINFO` by default. In addition, Visual Studio has [`/GR`][2] compiler option enabled by default to add run-time type information.
 
@@ -47,7 +47,7 @@ typedef struct TypeDescriptor
 ```
 
 
-`RTTICompleteObjectLocator` is used as the first entry to uses `typeid` operator, `dinamic_cast<>`, calculate member offsets and get multiple, virtual and single-inherintace hierarchy.  `TypeDescriptor` is a structure that allows the use of `typeid` operator through  `std::type_info` class.
+`RTTICompleteObjectLocator` is used as the first entry to uses `typeid` operator, `dinamic_cast<>`, calculate member offsets and get multiple, virtual and single-inherintace hierarchy.  `TypeDescriptor` is a structure that allows the use of `typeid` operator through `std::type_info` class.
 
 To purpose of this blogpost, I'll use the following code:
 
@@ -56,11 +56,11 @@ struct A { int a; };
 struct B : virtual A { virtual void f() { puts("im f"); }; int b; };
 ```
 
-The `this` object will be as many fields as there are members of class, almost the first field is a pointer to a its vtable, also known as `vfptr`, and we can get `RTTICompleteObjectLocator` pointer at `vfptr[-1]`: `static_cast<_RTTICompleteObjectLocator***>(pointerToObject)[0][-1];`. Let's see the layout of our example.
+The `this` object will have as many fields as there are class members. Almost, when RTTT is used the first field is a pointer to its vtable, also known as `vfptr`, and we can get `RTTICompleteObjectLocator` pointer at `vfptr[-1]`: `static_cast<_RTTICompleteObjectLocator***>(pointerToObject)[0][-1];`. Let's see the layout of our example.
 
 ![B class object layout](/assets/img/202212/b-class-object-layout.png){: class="image fit"}
 
-As we can see, `pCOLocator` points to `B::RTTICompleteObjectLocator` and from there we can walk to `TypeDescriptor` structure. The `TypeDescriptor` structure has a field called `pVFTable`, and it points to `type_info::vftable`. We can conclude every `RTTICompleteObjectLocator` structure can be found if we get `type_info::vftable` address and walk backwards.
+As we can see, `pCOLocator` points to `B::RTTICompleteObjectLocator` and from there we can walk to `TypeDescriptor` structure. The `TypeDescriptor` structure has a field called `pVFTable`, and it points to `type_info::vftable`. So, we can conclude every `RTTICompleteObjectLocator` structure can be found if we get `type_info::vftable` address and walk backwards.
 
 ![B::RTTICompleteObjectLocator to type_info::vftable](/assets/img/202212/b-to-typeinfo.png){: class="image fit"}
 
@@ -86,7 +86,7 @@ As I said before, the key to find vftables is `type_info::TypeDescriptor` struct
 
 ![type_info::TypeDescriptor and its values](/assets/img/202212/typedescriptor-with-its-values.png){: class="image fit"}
 
-In resume, we need the `type_info::vftable` address, to get whole crossreferences because every `type_info::TypeDescriptor.pVFTable` field structure points there. After that, get the crossreferences of `TypeDescriptor` because `RTTICompleteObjectLocator.pTypeDescriptor` points there. Finally, get the whole crossreferences of `RTTICompleteObjectLocator` to take the address one by one, add it `sizeof(void*)`, compare if the prefix is `'??_7` and reach our goal, get whole vftables :D.
+In resume, we need the `type_info::vftable` address, to get whole crossreferences because every `type_info::TypeDescriptor.pVFTable` field structure points there. After that, get the crossreferences of `type_info::TypeDescriptor` because `RTTICompleteObjectLocator.pTypeDescriptor` points there. Finally, get the whole crossreferences of `RTTICompleteObjectLocator` to get the address one by one, add it `sizeof(void*)`, compare if the prefix is `'??_7` and reach our goal, get whole vftables :D.
 
 
 1. Lookup `type_info::vftable` address

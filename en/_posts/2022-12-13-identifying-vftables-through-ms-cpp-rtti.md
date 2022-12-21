@@ -64,6 +64,10 @@ As we can see, `pCOLocator` points to `B::RTTICompleteObjectLocator` and from th
 
 ![B::RTTICompleteObjectLocator to type_info::vftable](/assets/img/202212/b-to-typeinfo.png){: class="image fit"}
 
+What's the `B::TypeDescriptor` values?
+
+![type_info::TypeDescriptor and its values](/assets/img/202212/typedescriptor-with-its-values.png){: class="image fit"}
+
 ## Basic MS name mangling
 MS-ABI isn't documented, but we have effors like Clang/LLVM to make compatible compilers. MS-ABI has some symbol prefixs for `vftables`, `RTTICompleteObjectLocator`, `TypeDescriptor`, etc. For example, the mangled name of `type_info::TypeDescriptor` is `??_R0?AVtype_info@@@8`.
 
@@ -82,9 +86,10 @@ TYPEINFO_TD_MANGLED_NAME = "??_R0?AVtype_info@@@8"
 ```
 
 ## vftables lookup
-As I said before, the key to find vftables is `type_info::TypeDescriptor` structure. In the following image you can see in the right, the structure values and, in the left, the structure itself.
+As I said before, the key to find vftables is `type_info::TypeDescriptor` structure because `type_info::TypeDescriptor.pVFTable` points to `type_info::vftable` (its mangled name is `??_7type_info@@6B@`). In the following image you can see structure relationship
 
-![type_info::TypeDescriptor and its values](/assets/img/202212/typedescriptor-with-its-values.png){: class="image fit"}
+![xrefs to type_info::vftable](/assets/img/202212/xrefs-to-vfptr-type_info-vftable.png){: class="image fit"}
+
 
 In resume, we need the `type_info::vftable` address, to get whole crossreferences because every `type_info::TypeDescriptor.pVFTable` field structure points there. After that, get the crossreferences of `type_info::TypeDescriptor` because `RTTICompleteObjectLocator.pTypeDescriptor` points there. Finally, get the whole crossreferences of `RTTICompleteObjectLocator` to get the address one by one, add it `sizeof(void*)`, compare if the prefix is `'??_7` and reach our goal, get whole vftables :D.
 

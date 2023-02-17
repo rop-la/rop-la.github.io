@@ -147,24 +147,6 @@ const std::bad_array_new_length::`vftable' at 0x1400032f0
 const type_info::`vftable' at 0x140003278
 const B::`vftable' at 0x140003358
 ```
-
-6. Finally, we can get the class methods using the following snippet
-```
-            while True:
-                virtual_method_addr = helper.read_xword(addr)
-                if helper.is_code(virtual_method_addr):
-                    helper.print_hex(virtual_method_addr)
-                else:
-                    break
-
-                addr += const.EA_SIZE
-                if idaapi.get_first_dref_to(addr) != idaapi.BADADDR:
-                    break
-```
-
-`idaapi.get_first_dref_to` get the referencing address. Taking into account that class methods shouldn't have any direct reference because they are accessed by vftable indirectly, so `idaapi.get_first_dref_to` should return `idaapi.BADADDR` (`(unsigned)-1`), otherwise it returns the referencing address. Probably it isn't the best heuristic but for now it works.
-
-
 ## Future work
 There is a case where doesn't exist Run-Time Information Type but vftables are used, and I would like to handle that case. Furthermore, get the inherintance relationship hierarchy.
 

@@ -10,6 +10,10 @@ lang: en
 lang-ref: gamehacking-rakion-my-begining
 ---
 
+Part I: [Gamehacking: Rakion, the begining]({{site.baseurl}}{% link en/_posts/2021-09-06-gamehacking-rakion-my-begining.md %})
+<br>
+Parte II: [Rakion: Entities and editing cell creatures]({{site.baseurl}}{% link en/_posts/2023-02-17-rakion-entities-editing-cell-creatures.md %})
+
 # Some words of my past
 
 When I started in reverse engineering I was in high-school in Peru and with my frieds I played DotA and Rakion. One day a dude started to use a cheat (at that time we called it "hack" :P), after asking him many times he told me where he had downloaded it. 

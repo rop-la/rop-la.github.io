@@ -28,12 +28,12 @@ There are two ways to get the cell's creature ID address in the lobby, scan an u
 
 In the following video we can see how to get the cell creature address in lobby using the first method.
 
-
-| ![Searching and editing a cell creature ID](/assets/img/202302/search-edit-cells-lobby.gif){: class="image fit"} |
-|:--:| 
-| * Searching and editing a cell creatures in-lobby (2015-dic version)* |
-
-In the video my player is *Xeen* and, to reduce the results group, I started looking if my player name is close, because it is usual that entity player structure has value of items, stats, and related information like the player's name.
+<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/9MBFSEyKc0Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe><br>
+<em>Searching and editing a cell creatures in-lobby (2015-dic version)</em>
+</div>
+<br>
+n the video my player is *Xeen* and, to reduce the results group, I started looking if my player name is close, because it is usual that entity player structure has value of items, stats, and related information like the player's name.
 
 And we have our first cheat :D. Anyway, if you restart the game, the cell's creature ID address will change. How we can fix it? Check [**Entity in-lobby**](#entity-in-lobby) section.
 
@@ -73,10 +73,11 @@ void __thiscall CPlayer::EndGame(CPlayer *this)
 
 Let's see it on CheatEngine:
 
-| ![Editing a cell creature by CE](/assets/img/202302/editing-cell-by-CE.gif){: class="image fit"} |
-|:--:|
-| *Editing cell creatures in-lobby by CE (2012-may version)* |
-
+<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/dUgNcRh0oDw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe><br>
+<em>Editing cell creatures in-lobby by CE (2012-may version)</em>
+</div>
+<br>
 Indeed, 2015 version (and probably later), the cell creature level is found 2 bytes after the ID.
 
 ## Entity in-game
@@ -246,11 +247,11 @@ pCellInfo->cell_info_by_slot[0].cell_level = 99;
 pCellInfo->cell_info_by_slot[0].cell_points_cost = 0;
 ```
 
-| ![Editing cell creatures in game](/assets/img/202302/changing-cc-game.gif){: class="image fit"} |
-|:--:| 
-| *Editing cell creatures in-game (2012-may version)* |
-
-
+<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/2AoSPE8bWSc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe><br>
+<em>Editing cell creatures in-game (2012-may version)</em>
+</div>
+<br>
 Now, in 2015-dic version we have a field called `state`, if we write always `pCellInfo->cell_info_by_slot[0].state = available` the first slot will be avaible to be summoned 'always' :D. Anyway, there is a check to bypass, let's review again the two functions mentioned before, `sub_35158F20(a2, a3, i);` (2015-dic version), and `void __cdecl sub_350E3260(int *a1, int a2)` (2012-may version) both of which have first argument `struct CellInfo*`.
 
 2012-may version:
@@ -289,11 +290,11 @@ void __cdecl sub_35158F20(int *a1, int a2, int a3)
 
 What does those 'if statements' do? Basically checks that summoned creatures are not greater than 9. ¿Why 9?, because the cell creatures *white* spawn three creatures by slot. Then, we need to write constatly 0 in that address to bypass the check, as well as force to change the slot state to available, so we will be able to perform infinite creatures summons. Only is possible to summon one time per slot while the creature is still alive in-game, but in the following video you will see that I can summon many creatures from first slot. 
 
-| ![Unlimited summons](/assets/img/202302/unlimited-summons.gif){: class="image fit"} |
-|:--:| 
-| Unlimited summons (*2015-dic Rakion version*) |
-
-
+<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/2AoSPE8bWSc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe><br>
+<em>Unlimited summons (2015-dic version)</em>
+</div>
+<br>
 The `state` field is 'encrypted', I mean, that value changes constatly and it have a special way to write or read it. In a next blogpost I'll show you how we can do that, to make others cheats or you can see my talk at Ekoparty 2022 called [*The game (life) and how to hack it*][1] in spanish :D.
 
 

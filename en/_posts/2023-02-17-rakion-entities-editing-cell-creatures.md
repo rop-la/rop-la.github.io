@@ -33,7 +33,7 @@ In the following video we can see how to get the cell creature address in lobby 
 <em>Searching and editing a cell creatures in-lobby (2015-dic version)</em>
 </div>
 <br>
-n the video my player is *Xeen* and, to reduce the results group, I started looking if my player name is close, because it is usual that entity player structure has value of items, stats, and related information like the player's name.
+In the video my player is *Xeen* and, to reduce the results group, I started looking if my player name is close, because it is usual that entity player structure has value of items, stats, and related information like the player's name.
 
 And we have our first cheat :D. Anyway, if you restart the game, the cell's creature ID address will change. How we can fix it? Check [**Entity in-lobby**](#entity-in-lobby) section.
 
@@ -75,7 +75,7 @@ Let's see it on CheatEngine:
 
 <div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/dUgNcRh0oDw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe><br>
-<em>Editing cell creatures in-lobby by CE (2012-may version)</em>
+<em>Editing cell creatures in-lobby (2012-may version)</em>
 </div>
 <br>
 Indeed, 2015 version (and probably later), the cell creature level is found 2 bytes after the ID.
@@ -290,7 +290,7 @@ void __cdecl sub_35158F20(int *a1, int a2, int a3)
 
 What does those 'if statements' do? Basically checks that summoned creatures are not greater than 9. ¿Why 9?, because the cell creatures *white* spawn three creatures by slot. Then, we need to write constatly 0 in that address to bypass the check, as well as force to change the slot state to available, so we will be able to perform infinite creatures summons. Only is possible to summon one time per slot while the creature is still alive in-game, but in the following video you will see that I can summon many creatures from first slot. 
 
-<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/2AoSPE8bWSc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/Xi1B2aEjiNY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe><br>
 <em>Unlimited summons (2015-dic version)</em>
 </div>

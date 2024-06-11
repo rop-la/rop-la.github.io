@@ -1,0 +1,35 @@
+---
+layout: default-linenums
+---
+
+{% assign posts = site.posts | where:"lang-ref", page.lang-ref | sort: 'lang' %}
+
+<section id="post">
+    <article class="container">
+        <header>
+            <h2>{{ page.title }}</h2>
+        </header>
+
+        {% if posts.size > 1 %}
+          <p>
+            <span class="fas fa-language"></span>
+            {% for post in posts %}
+              {% if post.lang == page.lang %}
+                <strong>
+                  <a href="{{ post.url }}" title="{{ site.data.langs | where: 'lang', post.lang | map: 'read_in' | first }}">
+                    [{{ post.lang | upcase }}]
+                  </a>
+                </strong>
+              {% else %}
+                <a href="{{ post.url }}" title="{{ site.data.langs | where: 'lang', post.lang | map: 'read_in' | first }}">
+                  [{{ post.lang | upcase }}]
+                </a>
+              {% endif %}
+            {% endfor %}
+          </p>
+        {% endif %}
+
+        {{ content }}
+        
+    </article>
+</section>

@@ -559,7 +559,7 @@ The linker ld has a global variable [`__nptl_rtld_global`][10] that points to th
 ```
 
 
-> Escrito por **Nox**
+> Written by **Nox**
 
 [1]: https://googleprojectzero.blogspot.com/2014/08/the-poisoned-nul-byte-2014-edition.html
 [2]: https://binholic.blogspot.com/2017/05/notes-on-abusing-exit-handlers.html
